@@ -1,0 +1,16 @@
+.faq-input {
+    text-align: center;
+    margin: 20px;
+  }
+  .faq-display {
+    background: white;
+    padding: 10px;
+    border-radius: 8px;
+    width: 50%;
+    margin: 10px auto;
+  }
+  .faq-display ul {
+    list-style: none;
+    padding: 0;
+  }
+  

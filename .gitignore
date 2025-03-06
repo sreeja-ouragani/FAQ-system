@@ -1,0 +1,63 @@
+# Ignore environment variables
+.env
+.env.local
+.env.development
+.env.production
+.env.test
+
+# Ignore CSV files
+*.csv
+
+# Ignore Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.dylib
+
+# Ignore Python virtual environment
+.venv/
+venv/
+
+# Ignore Next.js build files (Frontend)
+.next/
+out/
+node_modules/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+vercel/
+
+# Ignore dependency directories
+node_modules/
+dist/
+build/
+
+# Ignore AWS credentials
+.aws/
+
+# Ignore editor-specific files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore backend dependencies and compiled files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore logs
+logs/
+*.log
+
+# Ignore compiled TypeScript files (if using TS)
+*.tsbuildinfo

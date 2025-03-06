@@ -1,0 +1,70 @@
+.product-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 85%; /* Increased width */
+    max-width: 980px; /* Set a max width */
+    height: 450px; /* Increase height */
+  }
+  
+  .product-left {
+    flex: 1; /* Takes 50% of the width */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .product-image {
+    width: 100%;
+    max-width: 380px;
+    border-radius: 8px;
+  }
+  
+  .product-details {
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .product-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 10px;
+  }
+  
+  .product-price {
+    font-size: 20px;
+    font-weight: bold;
+    color: #007bff;
+  }
+  
+  .add-to-cart {
+    background: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s ease;
+  }
+  
+  .add-to-cart:hover {
+    background: #218838;
+  }
+
+  /* Right Side: AI FAQ */
+  .faq-section {
+    flex: 1; /* Takes 50% of the width */
+    margin-left: 20px; /* Add space between sections */
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    max-width: 800px; 
+  }

@@ -1,0 +1,85 @@
+.faq-container {
+    text-align: center;
+    background: white;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+  }
+  
+  .faq-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .faq-input-box {
+    display: flex;
+    align-items: center; /* Align items in the same row */
+    gap: 8px;
+    margin-bottom: 10px;
+    flex-wrap: nowrap; /* Ensure they stay in one row */
+    justify-content: center; /* Center within container */
+}
+
+  
+  .faq-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    font-size: 1rem;
+  }
+  
+  .send-button, .mic-button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 6px; /* Reduce padding to decrease size */
+    width: 36px;  /* Set a fixed width */
+    height: 36px; /* Set a fixed height */
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease;
+    font-size: 0.9rem; /* Reduce font/icon size */
+}
+
+.send-button:hover, .mic-button:hover {
+    background: #0056b3;
+}
+
+  
+  .faq-response {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  .faq-suggestions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 10px;
+    justify-content: center;
+  }
+  
+  .faq-suggestion {
+    padding: 8px 12px;
+    background: #007bff;
+    color: white;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    border: none;
+    transition: background 0.3s ease;
+  }
+  
+  .faq-suggestion:hover {
+    background: #0056b3;
+  }
+  
