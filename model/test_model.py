@@ -21,6 +21,14 @@ def save_to_csv(query, answer, file_path=LOG_FILE):
     except Exception as e:
         print(f"⚠️ Error saving to log file: {e}")
 
+def process_query(query):
+    """Processes a text query and returns a response."""
+    return f"Processed query: {query}"
+
+def process_speech(audio_file):
+    """Processes an audio file (dummy function for now)."""
+    return "Speech processed successfully"
+
 if __name__ == "__main__":
     print("🔹 AI-Powered FAQ System")
     print("Choose input method:")
