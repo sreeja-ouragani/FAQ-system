@@ -140,3 +140,68 @@
   color: #007bff;
   font-weight: bold;
 }
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+  .product-card {
+    flex-direction: column;
+    height: auto;
+    padding: 15px;
+    width: 95%;
+  }
+
+  .product-left {
+    width: 100%;
+  }
+
+  .product-image {
+    max-width: 100%;
+  }
+
+  .product-footer {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .faq-section {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 20px;
+    padding: 10px;
+  }
+
+  .faq-input {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .faq-input input {
+    width: 100%;
+  }
+
+  .faq-input button {
+    width: 100%;
+  }
+
+  .ai-answer-container {
+    max-height: 150px;
+    padding: 8px;
+  }
+
+  .faq-answer {
+    font-size: 13px;
+    padding: 10px;
+  }
+}
+/* 🔴 Updated: Show Live Speech-to-Text Instead of "Listening..." */
+.listening {
+  font-size: 14px;
+  color: red;
+  font-weight: bold;
+  background: #f8d7da;
+  padding: 5px;
+  border-radius: 5px;
+  display: inline-block;
+  margin-top: 5px;
+}

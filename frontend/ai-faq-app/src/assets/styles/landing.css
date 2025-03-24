@@ -1,0 +1,106 @@
+/* Full-screen background */
+.landing-container {
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  
+  /* Dark overlay for readability */
+  .overlay {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 50px;
+    border-radius: 12px;
+    text-align: center;
+    color: white;
+    max-width: 650px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Title animation */
+  .title {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    opacity: 0;
+    animation: fadeInDown 1s ease-in-out forwards;
+  }
+  
+  /* Tagline animation */
+  .tagline {
+    font-size: 22px;
+    font-style: italic;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeInUp 1s ease-in-out 0.5s forwards;
+  }
+  
+  /* Button styles */
+  .get-started-btn {
+    background: linear-gradient(135deg, #ff7b00, #ff4500);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: 0.3s ease-in-out;
+    box-shadow: 0px 3px 10px rgba(255, 69, 0, 0.5);
+    opacity: 0;
+    animation: fadeInUp 1s ease-in-out 1s forwards;
+  }
+  
+  /* Hover effect for the button */
+  .get-started-btn:hover {
+    background: linear-gradient(135deg, #ff4500, #ff1100);
+    transform: scale(1.05);
+  }
+  
+  /* Animations */
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* 📱 Mobile Optimization */
+  @media (max-width: 768px) {
+    .overlay {
+      padding: 30px;
+      max-width: 90%;
+    }
+    
+    .title {
+      font-size: 32px;
+    }
+    
+    .tagline {
+      font-size: 18px;
+    }
+  
+    .get-started-btn {
+      font-size: 16px;
+      padding: 10px 20px;
+    }
+  }
+  

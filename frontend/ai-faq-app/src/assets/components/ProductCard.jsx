@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "../styles/product.css";
-import iphone16 from "../iPhone16.webp";
+import iphone16 from "../iPhone.webp";
 import { API_BASE_URL } from "../../config";
 
 const ProductCard = () => {
   const [query, setQuery] = useState("");
   const [faqAnswer, setFaqAnswer] = useState("");
   const [showSubmit, setShowSubmit] = useState(false);
-  const [listening, setListening] = useState(false); // State to show "Listening..."
+  const [listening, setListening] = useState(false);
+  const [liveText, setLiveText] = useState(""); // 🔴 Live speech-to-text state
 
   const handleInputChange = (e) => {
     setQuery(e.target.value);
@@ -35,26 +36,29 @@ const ProductCard = () => {
       console.error("Error generating FAQ:", error);
     }
 
-    setQuery("");
     setShowSubmit(false);
   };
 
-  // 🔴 **New: Handle Voice Input using Speech Recognition**
+  // 🔴 **Updated: Live Speech-to-Text Instead of Just "Listening..."**
   const handleVoiceInput = () => {
-    setListening(true); // Show "Listening..."
-    
-    // 🔴 **Speech Recognition (Underlined in Red)**
-    const recognition = new window.webkitSpeechRecognition(); 
+    setListening(true);
+    setLiveText(""); // Reset live text
+
+    const recognition = new window.webkitSpeechRecognition();
     recognition.lang = "en-US";
-    recognition.interimResults = false;
+    recognition.interimResults = true; // 🔴 Capture live speech
     recognition.maxAlternatives = 1;
 
     recognition.onresult = (event) => {
-      const voiceText = event.results[0][0].transcript;
-      setQuery(voiceText); // Set input field value
+      const transcript = event.results[0][0].transcript;
+      setQuery(transcript); // Keep the query visible
       setShowSubmit(true);
-      setListening(false); // Hide "Listening..."
-      handleSubmit(); // Auto-submit after capturing voice input
+      setLiveText(transcript); // 🔴 Show live speech text
+    };
+
+    recognition.onend = () => {
+      setListening(false);
+      handleSubmit(); // Auto-submit after finishing
     };
 
     recognition.onerror = (event) => {
@@ -70,8 +74,8 @@ const ProductCard = () => {
       <div className="product-left">
         <img src={iphone16} alt="iPhone 16" className="product-image" />
         <div className="product-details">
-          <h2>iPhone 16</h2>
-          <p>Experience the future with the latest iPhone 16. AI-enhanced performance.</p>
+          <h2>iPhone Pro</h2>
+          <p>Experience the power of AI with the all-new iPhone Pro. Sleek design, smarter features.</p>
         </div>
         <div className="product-footer">
           <span className="product-price">₹1,20,000</span>
@@ -85,18 +89,17 @@ const ProductCard = () => {
           <input
             type="text"
             placeholder="Type your query..."
-            value={query}
+            value={query} // 🔴 Keeps the question visible
             onChange={handleInputChange}
           />
           <button onClick={handleVoiceInput}>Speak 🎤</button>
-          {listening && <span className="listening">🎙 Listening...</span>}
+          {listening && <span className="listening">🎙 {liveText || "Listening..."}</span>}
           {showSubmit && <button onClick={handleSubmit}>Submit</button>}
         </div>
 
         {faqAnswer && (
           <div className="faq-answer">
             <h4>AI Answer:</h4>
-            {/* 🔴 **Updated: Scrollable Answer Box** */}
             <div className="ai-answer-container">
               <p dangerouslySetInnerHTML={{ __html: faqAnswer }} />
             </div>
