@@ -1,16 +1,36 @@
 .faq-input {
-    text-align: center;
-    margin: 20px;
-  }
+  text-align: center;
+  margin: 20px;
+}
+
+.faq-display {
+  background: white;
+  padding: 10px;
+  border-radius: 8px;
+  width: 50%;
+  margin: 10px auto;
+}
+
+/* Ensure the FAQ display is responsive */
+@media (max-width: 768px) {
   .faq-display {
-    background: white;
-    padding: 10px;
-    border-radius: 8px;
-    width: 50%;
-    margin: 10px auto;
+      width: 80%; /* Increase width for smaller screens */
+      padding: 15px; /* Add more padding for better spacing */
   }
-  .faq-display ul {
-    list-style: none;
-    padding: 0;
+}
+
+@media (max-width: 480px) {
+  .faq-display {
+      width: 95%; /* Make it almost full-width on mobile */
+      padding: 20px; /* Increase padding for readability */
   }
-  
+
+  .faq-input {
+      margin: 10px; /* Reduce margin for small screens */
+  }
+}
+
+.faq-display ul {
+  list-style: none;
+  padding: 0;
+}

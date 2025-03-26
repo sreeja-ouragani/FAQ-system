@@ -141,7 +141,7 @@
   font-weight: bold;
 }
 
-/* Mobile Optimization */
+/* ✅ Mobile Optimization */
 @media (max-width: 768px) {
   .product-card {
     flex-direction: column;
@@ -194,7 +194,48 @@
     padding: 10px;
   }
 }
-/* 🔴 Updated: Show Live Speech-to-Text Instead of "Listening..." */
+
+/* ✅ Further Mobile Adjustments for Smaller Screens */
+@media (max-width: 480px) {
+  .product-card {
+    padding: 10px;
+    width: 100%;
+  }
+
+  .product-footer {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .product-price {
+    font-size: 18px;
+  }
+
+  .faq-section {
+    padding: 8px;
+  }
+
+  .faq-input {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .faq-input input {
+    font-size: 13px;
+    padding: 8px;
+  }
+
+  .faq-input button {
+    font-size: 13px;
+    padding: 8px;
+  }
+
+  .faq-answer {
+    font-size: 12px;
+  }
+}
+
+/* ✅ Updated: Show Live Speech-to-Text Instead of "Listening..." */
 .listening {
   font-size: 14px;
   color: red;
