@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "../styles/product.css";
-import iphone16 from "../iPhone.webp";
+import iphone16 from "../../assets/iphone.webp"; 
 import { API_BASE_URL } from "../../config";
 
 const ProductCard = () => {
